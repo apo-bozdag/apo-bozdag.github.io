@@ -10,6 +10,7 @@ import { Text } from '../components/Text';
 
 let Parser = require('rss-parser');
 let parser = new Parser();
+const CORS_PROXY = 'https://cors-anywhere.herokuapp.com/';
 
 const styles = theme => ({
   root: {},
@@ -31,7 +32,7 @@ class Blog extends React.Component {
   }
 
   async componentDidMount () {
-    const feed = await parser.parseURL('https://apo-bozdag.hashnode.dev/rss.xml');
+    const feed = await parser.parseURL(CORS_PROXY + 'https://apo-bozdag.hashnode.dev/rss.xml');
     this.setState(feed);
   }
 
@@ -54,8 +55,8 @@ class Blog extends React.Component {
           <p className={classes.seeMore}>
             <Text>See more at</Text>
             {' '}
-            <Link href='https://abdullahbozdag.medium.com' target='medium'>
-              <Text>https://abdullahbozdag.medium.com</Text>
+            <Link href='https://apo-bozdag.hashnode.dev' target='medium'>
+              <Text>https://apo-bozdag.hashnode.dev</Text>
             </Link>
           </p>
         </Secuence>
