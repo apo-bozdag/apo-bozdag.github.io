@@ -32,7 +32,7 @@ class Blog extends React.Component {
   }
 
   async componentDidMount () {
-    const feed = await parser.parseURL(CORS_PROXY + 'https://apo-bozdag.hashnode.dev/rss.xml');
+    const feed = await parser.parseURL(CORS_PROXY + 'https://medium.com/feed/@abdullahbozdag');
     this.setState(feed);
   }
 
@@ -55,8 +55,8 @@ class Blog extends React.Component {
           <p className={classes.seeMore}>
             <Text>See more at</Text>
             {' '}
-            <Link href='https://apo-bozdag.hashnode.dev' target='medium'>
-              <Text>https://apo-bozdag.hashnode.dev</Text>
+            <Link href='https://abdullahbozdag.medium.com' target='medium'>
+              <Text>https://abdullahbozdag.medium.com</Text>
             </Link>
           </p>
         </Secuence>
